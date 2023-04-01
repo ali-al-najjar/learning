@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 
-const CourseSchema = new mongoose.Schema({
+const courseSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true
@@ -20,6 +20,6 @@ const CourseSchema = new mongoose.Schema({
 
 })
 
-const Course = mongoose.model("Course", blogSchema);
+const Course = mongoose.model("Course", courseSchema);
 
 module.exports = Course

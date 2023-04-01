@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 
-const EnrollementSchema = new mongoose.Schema({
+const enrollementSchema = new mongoose.Schema({
   user_id: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
@@ -14,6 +14,6 @@ const EnrollementSchema = new mongoose.Schema({
 
 })
 
-const Enrollement = mongoose.model("Enrollement", EnrollementSchema);
+const Enrollement = mongoose.model("Enrollement", enrollementSchema);
 
 module.exports = Enrollement
