@@ -1,7 +1,6 @@
 const { app, BrowserWindow } = require('electron')
+
 require('@electron/remote/main').initialize()
-import React from 'react'
-import App from '../src/App';
 
 function createWindow() {
   const win = new BrowserWindow({ 
@@ -14,10 +13,6 @@ function createWindow() {
 
   win.loadURL('http://localhost:3000')
 
-  return(
-    <App />
-
-  )
 }
 
 app.on('ready',createWindow)
