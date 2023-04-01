@@ -7,7 +7,7 @@ require("dotenv").config();
 app.listen(process.env.PORT, (err) => {
   if (err) console.error(err)
   console.log("Server is listening on port", process.env.PORT)
-  require("./config/db.config")
+  require("./configs/db.config")
 })
 
 app.use("/me/:name",(req,res)=>{
