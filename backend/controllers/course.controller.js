@@ -24,8 +24,7 @@ exports.createCourse = async (req, res) => {
 
 
 exports.enrollStudent = async (req, res) => {
-  const {id: courseId} = req.params;
-  const { student } = req.body;
+  const { student , courseId } = req.body;
 
   const course = await Course.findById(courseId);
 
@@ -34,5 +33,19 @@ exports.enrollStudent = async (req, res) => {
   })
 
   await course.save();
+  res.json(course)
+}
+
+exports.withdrawal = async (req, res) => {
+  const { courseId, studentId } = req.body;
+
+  const course = await Course.findOneAndUpdate(
+    { _id: courseId },
+    {
+      $pull: { students: { student: studentId } }
+    },
+    { new: true }
+  )
+
   res.json(course)
 }
