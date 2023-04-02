@@ -20,6 +20,7 @@ exports.createCourse = async (req, res) => {
   const course = await Course.create({ title, description, instructor, duration, student});
 
   res.json(course)
+  console.log(req.user)
 }
 
 
