@@ -3,7 +3,7 @@ const router = Router();
 
 const { createFile , getAllFiles } = require("../controllers/file.controller");
 
-router.post("/upload", createFile);
-router.get("/all", getAllFiles);
+router.post("/upload", authMiddleware , adminMiddleware,createFile);
+router.get("/all", authMiddleware , adminMiddleware,getAllFiles);
 
 module.exports = router;
