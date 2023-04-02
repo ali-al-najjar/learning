@@ -18,10 +18,11 @@ exports.createRequest = async (req, res) => {
 
 
 exports.ApproveDeclineRequest = async(req,res)=>{
-  const { student_id, course_id , flag } = req.body;
+  let { student_id, course_id ,reason, flag } = req.body;
   
-  if (flag = true){
+  if (flag == true){
 
+  reason = this.reason
   const course = await Course.findOneAndUpdate(
     { _id: course_id },
     {
@@ -30,7 +31,7 @@ exports.ApproveDeclineRequest = async(req,res)=>{
     { new: true }
   )
 
-  res.json(request)}
+  res.json(course)}
   else{
     res.json({message: "Withdrawal Declined"})
   }

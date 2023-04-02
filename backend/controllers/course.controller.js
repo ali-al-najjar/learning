@@ -24,9 +24,9 @@ exports.createCourse = async (req, res) => {
 
 
 exports.enrollStudent = async (req, res) => {
-  const { student , courseId } = req.body;
+  const { student , course_id } = req.body;
 
-  const course = await Course.findById(courseId);
+  const course = await Course.findById(course_id);
 
   course.students.push({
     student
