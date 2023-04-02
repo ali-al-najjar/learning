@@ -35,28 +35,3 @@ exports.enrollStudent = async (req, res) => {
   await course.save();
   res.json(course)
 }
-
-exports.withdrawalRequest = async (req,res)=>{
-
-  const { course_id, student_id, flag } = req.body;
-}
-
-
-exports.withdrawal = async (req, res) => {
-  const { course_id, student_id, flag } = req.body;
-
-  if (flag == true){
-
-  const course = await Course.findOneAndUpdate(
-    { _id: course_id },
-    {
-      $pull: { students: { student: student_id } }
-    },
-    { new: true }
-  )
-
-  res.json(course)}
-  else{
-    res.json({message : "Withdrawal declined"})
-  }
-}
