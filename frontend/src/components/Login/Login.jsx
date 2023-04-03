@@ -40,10 +40,13 @@ function Login() {
           }
           })
           .then((res) => {
-              console.log(res)
+              console.log(res.data)
               localStorage.setItem('token',res.data.token);
+              if (res.data.user_role == "admin"){
+                // window.location.href="http://localhost:3000/dashboard" 
+              }else{
               // localStorage.setItem('email',res.data.user.email);
-              // window.location.href="http://localhost:3000/code_editor"  
+              window.location.href="http://localhost:3000/courses"  }
         }
           ).catch((err) => {
               console.log(err);
@@ -56,7 +59,7 @@ function Login() {
 
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className = "form_container" onSubmit={handleSubmit}>
       <div>
         <label htmlFor="email">Email:</label>
         <input
@@ -76,7 +79,8 @@ function Login() {
         />
       </div>
       <div className = "error">{error}</div>
-      <button type="submit">Log In</button>
+      <div className="register_url">Don't have an account? <a href="/register">Register here</a></div>
+      <button className = "btn submit_button" type="submit">Log In</button>
     </form>
   );
 }

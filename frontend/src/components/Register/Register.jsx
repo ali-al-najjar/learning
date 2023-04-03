@@ -48,8 +48,7 @@ const Register = () => {
               })
               .then((res) => {
                   console.log(res)
-                  // localStorage.setItem('email',res.data.user.email);
-                  // window.location.href="http://localhost:3000/code_editor"  
+                  window.location.href="http://localhost:3000/"  
             }
               ).catch((err) => {
                   console.log(err);
@@ -59,9 +58,9 @@ const Register = () => {
     }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className = "form_container" onSubmit={handleSubmit}>
       <label>
-        First Name:
+        First Name: 
         <input
           type="text"
           name="firstName"
@@ -71,7 +70,7 @@ const Register = () => {
       </label>
       <br />
       <label>
-        Last Name:
+        Last Name: 
         <input
           type="text"
           name="lastName"
@@ -81,7 +80,7 @@ const Register = () => {
       </label>
       <br />
       <label>
-        Email:
+        Email: 
         <input
           type="email"
           name="email"
@@ -91,7 +90,7 @@ const Register = () => {
       </label>
       <br />
       <label>
-        Password:
+        Password: 
         <input
           type="password"
           name="password"
@@ -101,7 +100,8 @@ const Register = () => {
       </label>
       <br />
       <div className = "error">{error}</div>
-      <button type="submit">Submit</button>
+      <button className = "btn submit_button" type="submit">Submit</button>
+      <div className="register_url">Already have an account? <a href="/">Login here</a></div>
     </form>
   );
 };

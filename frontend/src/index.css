@@ -1,3 +1,16 @@
+:root{
+  --blue: #5375e2;
+  --gray: #7791a1;
+  --red: #f65868;
+  --white:#ffffff;
+
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +23,60 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.form_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+  width: 40%;
+  padding: 2rem;
+  border: 1px solid var(--blue);
+  border-radius: 5px;
+  margin-top:10%;
+}
+
+.form_container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.form_container input[type="text"],
+.form_container input[type="email"],
+.form_container input[type="password"] {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: var(--white);
+  font-size: 1rem;
+  text-align: left;
+}
+
+
+.form_container input[type="submit"]:hover {
+  background-color: var(--blue);
+}
+
+h1{
+  margin-bottom: 10%;
+}
+.error{
+  color: var(--red);
+}
+
+
+button.btn.submit_button {
+  padding: 0.5rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--blue);
+  color: var(--white);
+  font-size: 1rem;
+  cursor: pointer;
 }
