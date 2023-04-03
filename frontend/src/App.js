@@ -1,9 +1,13 @@
-import Hello from './components/Hello'
+import { Routes, Route } from "react-router-dom"
+import LoginPage from "./pages/LoginPage/loginpage";
 
 function App() {
   return (
-    <Hello />
-  );
+    <Routes>
+    <Route path="/" element={<LoginPage />} />
+    <Route path="*" element={<div>404</div>} />
+    </Routes>
+    )
 }
 
 export default App;
