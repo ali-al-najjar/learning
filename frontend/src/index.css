@@ -80,3 +80,22 @@ button.btn.submit_button {
   font-size: 1rem;
   cursor: pointer;
 }
+
+.fetch {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  margin-top: 10%;
+  gap: 2%;
+  align-items: end;
+}
+
+.course_card {
+  display: flex;
+  padding: 2%;
+  flex-direction: column;
+  border: 1px solid var(--red);
+  gap: 10px;
+  width: 300px;
+  height: 300px;
+}
