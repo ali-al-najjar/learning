@@ -41,7 +41,7 @@ function Login() {
           })
           .then((res) => {
               console.log(res)
-              // localStorage.setItem('token',res.data.authorisation.token);
+              localStorage.setItem('token',res.data.token);
               // localStorage.setItem('email',res.data.user.email);
               // window.location.href="http://localhost:3000/code_editor"  
         }
